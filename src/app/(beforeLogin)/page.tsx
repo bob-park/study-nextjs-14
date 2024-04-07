@@ -28,7 +28,7 @@ export default function Home() {
           </h3>
           <Link
             className="btn btn-outline rounded-full font-bold text-lg text-blue-500 hover:bg-blue-600 hover:text-white max-w-[300px]"
-            href="/i/flow/login"
+            href="/login"
           >
             로그인
           </Link>
