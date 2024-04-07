@@ -11,7 +11,14 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.4"
+    "next": "14.1.4",
+    "react-daisyui": "^5.0.0",
+    "daisyui": "^4.10.1",
+    "sharp": "0.32.6",
+    "timeago-react": "^3.0.6",
+    "timeago.js": "^4.0.2",
+    "date-fns": "^3.3.1",
+    "dayjs": "^1.11.10"
   },
   "devDependencies": {
     "typescript": "^5",
