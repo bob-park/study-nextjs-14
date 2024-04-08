@@ -9,7 +9,7 @@
  */
 
 // react
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 
 // nextjs
 import { useRouter } from 'next/navigation';
@@ -21,7 +21,7 @@ export default function LoginModal() {
 
   // state
   const [show, setShow] = useState<boolean>(true);
-  const [usename, setUsername] = useState<string>('');
+  const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
   // useEffect
@@ -40,6 +40,10 @@ export default function LoginModal() {
     router.back();
   };
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <dialog id={id} className="modal ">
       <div className="modal-box relative">
@@ -51,13 +55,18 @@ export default function LoginModal() {
             ✕
           </button>
         </div>
-        <form className="flex flex-col gap-2 justify-center items-center ">
+        <form
+          className="flex flex-col gap-2 justify-center items-center "
+          onSubmit={handleSubmit}
+        >
           <h2 className="text-2xl font-bold">로그인하세요.</h2>
           <div className="">
             <input
               type="text"
               placeholder="username"
               className="input input-bordered w-full max-w-xs"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div>
@@ -65,13 +74,16 @@ export default function LoginModal() {
               type="password"
               placeholder="password"
               className="input input-bordered w-full max-w-xs"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
           <div className="">
             <button
               className="btn btn-info rounded-full w-52"
-              disabled={!usename && !password}
+              disabled={!username || !password}
+              type="submit"
             >
               로그인하기
             </button>
