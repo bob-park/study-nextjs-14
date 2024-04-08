@@ -7,7 +7,7 @@ const FollowRecommandItem = () => {
     id: 'elonmusk',
     nickname: '일론 머스크',
     name: '일론 머스크',
-    image: '/5Udwvqim.jpg',
+    image: '/yRsRRjGO.jpg',
   };
 
   return (
@@ -16,7 +16,13 @@ const FollowRecommandItem = () => {
         <div className="flex gap-2">
           <div>
             <figure>
-              <Image src={me.image} alt="user icon" width={52} height={52} />
+              <Image
+                className="rounded-full"
+                src={me.image}
+                alt="user icon"
+                width={52}
+                height={52}
+              />
             </figure>
           </div>
           <div className="">
