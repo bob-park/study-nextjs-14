@@ -9,6 +9,8 @@ import Link from 'next/link';
 import { IoSearchSharp } from 'react-icons/io5';
 import NavMenu from './_component/NavMenu';
 import LogoutButton from './_component/LogoutButton';
+import TrandSection from './_component/TrandSection';
+import FollowRecommand from './_component/FollowRecommand';
 
 export default function AfterLoginLayout({
   children,
@@ -58,13 +60,19 @@ export default function AfterLoginLayout({
           <div className="flex-none w-[600px] h-[2000px]">{children}</div>
 
           {/* right menu */}
-          <section className="flex-none w-[350px] bg-blue-300">
-            <form className="sticky top-0">
+          <section className="flex-none w-[350px]">
+            <form className="sticky top-0 mb-6">
               <label className="input input-bordered flex items-center gap-2 m-1 mt-2 rounded-full">
                 <IoSearchSharp className="w-6 h-6" />
                 <input type="text" className="grow" placeholder="Search" />
               </label>
             </form>
+            <div className="mt-2">
+              <TrandSection />
+            </div>
+            <div className="mt-4">
+              <FollowRecommand />
+            </div>
           </section>
         </div>
       </div>
