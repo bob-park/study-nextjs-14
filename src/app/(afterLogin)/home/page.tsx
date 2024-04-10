@@ -5,7 +5,7 @@ import TabProvider from '../_component/TabProvider';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between relative">
+    <main className="flex min-h-screen flex-col relative">
       <TabProvider>
         <Tab />
         <PostForm />
