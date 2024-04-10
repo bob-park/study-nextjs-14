@@ -56,15 +56,17 @@ export default function NavMenu() {
         </Link>
       </li>
       <li>
-        <Link href="/message" style={{ textDecoration: 'none' }}>
+        <Link href="/messages" style={{ textDecoration: 'none' }}>
           <div className="flex w-full h-[50px p-3 items-center hover:bg-gray-400 rounded-full">
-            {segment === 'message' ? (
+            {segment === 'messages' ? (
               <BiSolidMessage className="w-6 h-6" />
             ) : (
               <BiMessageDetail className="w-6 h-6" />
             )}
             <div
-              className={`ml-2 text-xl ${segment === 'message' && 'font-bold'}`}
+              className={`ml-2 text-xl ${
+                segment === 'messages' && 'font-bold'
+              }`}
             >
               쪽지
             </div>

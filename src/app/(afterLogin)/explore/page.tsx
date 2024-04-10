@@ -3,7 +3,7 @@ import TrandSection from '../_component/TrandSection';
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen items-center relative">
+    <main className="flex flex-col min-h-screen items-center relative px-4">
       <div className="w-full">
         <SearchZone />
       </div>

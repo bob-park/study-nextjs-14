@@ -20,7 +20,7 @@ export default function AfterLoginLayout({
   modal: React.ReactNode;
 }>) {
   return (
-    <div className="flex justify-center size-full relative">
+    <div className="flex justify-center size-full relative min-w-[1280px]">
       {/* left menu */}
       <header className="w-[350px] h-screen sticky top-0">
         <section className="flex flex-col h-full justify-between content-between gap-2 pr-4 ">
@@ -59,7 +59,9 @@ export default function AfterLoginLayout({
       <div className="h-full">
         <div className="flex flex-row h-full">
           {/* contents */}
-          <div className="flex-none w-[600px]">{children}</div>
+          <div className="flex-none w-[600px] border-x-[1px] border-x-gray-200">
+            {children}
+          </div>
 
           {/* right menu */}
           <section className="flex-none w-[350px] pl-4">
