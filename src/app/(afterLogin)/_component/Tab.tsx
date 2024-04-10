@@ -11,7 +11,7 @@ export default function Tab() {
   const { tabIndex, setTabIndex } = useContext(TabContext);
 
   return (
-    <div className="flex flex-row w-full justify-center items-center h-16 border-b-[1px] border-gray-200 sticky top-0 z-10 bg-opacity-30 bg-base-100 backdrop-blur cursor-pointer">
+    <div className="flex flex-row w-full justify-center items-center h-16 border-b-[1px] border-gray-200 sticky top-0 z-10 bg-opacity-90 bg-base-100 backdrop-blur cursor-pointer">
       <div
         className="flex-1 transition-all duration-200 hover:bg-gray-100 size-full"
         onClick={() => setTabIndex(0)}
