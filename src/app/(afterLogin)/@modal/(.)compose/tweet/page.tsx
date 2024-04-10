@@ -48,7 +48,7 @@ export default function ComposeTweetPage() {
       onKeyDownCapture={handleKeyboardDown}
     >
       <div className="modal-box absolute top-0 mt-10">
-        <div className="mt-10">
+        <div className="">
           <button
             className="btn btn-sm btn-circle btn-ghost absolute top-0 left-0"
             onClick={handleBackdrop}
