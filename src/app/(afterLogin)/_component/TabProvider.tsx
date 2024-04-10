@@ -15,7 +15,7 @@ export default function TabProvider({
   const [tabIndex, setTabIndex] = useState<number>(0);
 
   return (
-    <TabContext.Provider value={{ tabIndex: 0, setTabIndex }}>
+    <TabContext.Provider value={{ tabIndex, setTabIndex }}>
       {children}
     </TabContext.Provider>
   );

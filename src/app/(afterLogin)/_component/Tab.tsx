@@ -1,13 +1,14 @@
 'use client';
 
 // react
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 // react icons
 import { IoSettingsOutline } from 'react-icons/io5';
+import { TabContext } from './TabProvider';
 
 export default function Tab() {
-  const [tabIndex, setTabIndex] = useState<number>(0);
+  const { tabIndex, setTabIndex } = useContext(TabContext);
 
   return (
     <div className="flex flex-row w-full justify-center items-center h-16 border-b-[1px] border-gray-200 sticky top-0 z-10 bg-opacity-30 bg-base-100 backdrop-blur cursor-pointer">

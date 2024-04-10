@@ -17,8 +17,6 @@ export default function NavMenu() {
   // next
   const segment = useSelectedLayoutSegment();
 
-  console.log(segment);
-
   const me = {
     id: 'bob-park',
   };
