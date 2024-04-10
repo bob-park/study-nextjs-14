@@ -18,10 +18,10 @@ export default function AfterLoginLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex gap-2 justify-center size-full relative">
+    <div className="flex justify-center size-full relative">
       {/* left menu */}
       <header className="w-[350px] h-screen sticky top-0">
-        <section className="flex flex-col h-full justify-between content-between gap-2">
+        <section className="flex flex-col h-full justify-between content-between gap-2 pr-4 border-r-[1px] border-gray-200">
           <div className="flex-1">
             <div className="flex flex-col justify-start gap-2 ml-2 ">
               <Link className="no-underline" href="/home">
@@ -55,12 +55,12 @@ export default function AfterLoginLayout({
 
       {/* right contents */}
       <div className="h-full">
-        <div className="flex flex-row gap-2 h-full">
+        <div className="flex flex-row h-full ">
           {/* contents */}
           <div className="flex-none w-[600px] h-[2000px]">{children}</div>
 
           {/* right menu */}
-          <section className="flex-none w-[350px]">
+          <section className="flex-none w-[350px] pl-4 border-l-[1px] border-gray-200">
             <form className="sticky top-0 mb-6">
               <label className="input input-bordered flex items-center gap-2 m-1 mt-2 rounded-full">
                 <IoSearchSharp className="w-6 h-6" />
