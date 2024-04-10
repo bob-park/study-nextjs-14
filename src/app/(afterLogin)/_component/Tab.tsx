@@ -7,6 +7,9 @@ import { useContext, useState } from 'react';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { TabContext } from './TabProvider';
 
+// classnames
+import cx from 'classnames';
+
 export default function Tab() {
   const { tabIndex, setTabIndex } = useContext(TabContext);
 
@@ -16,22 +19,22 @@ export default function Tab() {
         className="flex-1 transition-all duration-200 hover:bg-gray-100 size-full"
         onClick={() => setTabIndex(0)}
       >
-        <div
-          className={`flex flex-col justify-center items-center h-full relative`}
-        >
+        <div className="flex flex-col justify-center items-center h-full relative">
           <p
-            className={`px-2 text-lg  ${
+            className={cx(
+              'px-2 text-lg',
               tabIndex === 0
                 ? 'text-black font-bold'
-                : 'text-gray-400 font-medium'
-            }`}
+                : 'text-gray-400 font-medium',
+            )}
           >
             For You
           </p>
           <p
-            className={`absolute bottom-0 w-20 h-[6px] rounded-full ${
-              tabIndex === 0 && 'bg-blue-600'
-            }`}
+            className={cx(
+              'absolute bottom-0 w-20 h-[6px] rounded-full',
+              tabIndex === 0 && 'bg-blue-600',
+            )}
           ></p>
         </div>
       </div>
@@ -39,22 +42,22 @@ export default function Tab() {
         className="flex-1 transition-all duration-200 hover:bg-gray-100 size-full"
         onClick={() => setTabIndex(1)}
       >
-        <div
-          className={`flex flex-col  justify-center items-center h-full relative`}
-        >
+        <div className="flex flex-col  justify-center items-center h-full relative">
           <p
-            className={`px-2 text-lg ${
+            className={cx(
+              'px-2 text-lg',
               tabIndex === 1
                 ? 'text-black font-bold'
-                : 'text-gray-400 font-medium'
-            }`}
+                : 'text-gray-400 font-medium',
+            )}
           >
             Following
           </p>
           <p
-            className={`absolute bottom-0 w-20 h-[6px] rounded-full ${
-              tabIndex === 1 && 'bg-blue-600'
-            }`}
+            className={cx(
+              'absolute bottom-0 w-20 h-[6px] rounded-full',
+              tabIndex === 1 && 'bg-blue-600',
+            )}
           ></p>
         </div>
       </div>

@@ -10,17 +10,12 @@ import Link from 'next/link';
 // react-icons
 import { GoKebabHorizontal } from 'react-icons/go';
 import { BsDot } from 'react-icons/bs';
-import { FaRegComment } from 'react-icons/fa';
-import { BiRepost } from 'react-icons/bi';
-import { IoHeartOutline } from 'react-icons/io5';
-import { ImParagraphRight } from 'react-icons/im';
-import { CiBookmark } from 'react-icons/ci';
-import { FiShare } from 'react-icons/fi';
 
 // timeago
 import TimeAgo from 'timeago-react';
 import { register } from 'timeago.js';
 import ko from 'timeago.js/lib/lang/ko';
+import ActionButtons from './ActionButtons';
 
 register('ko', ko);
 
@@ -35,6 +30,19 @@ const post = {
   content: '클론코딩 라이브로 하니 너무 힘들어요 ㅜㅜ',
   images: ['/yRsRRjGO.jpg'],
   createdDate: new Date(),
+  comment: {
+    count: 1200,
+  },
+  repost: {
+    count: 1500000,
+  },
+  like: {
+    count: 120000,
+    isLike: true,
+  },
+  view: {
+    count: 12000,
+  },
 };
 
 export default function Post() {
@@ -91,46 +99,12 @@ export default function Post() {
             ))}
             {/* actions */}
             <div className="flex-1 mt-5">
-              <div className="flex justify-between items-center text-gray-500 ">
-                <div className="transition-all duration-200 hover:text-sky-500 p-2">
-                  <span>
-                    <FaRegComment className="w-5 h-5 inline" />
-                  </span>
-                  <span className="ml-2">1.3k</span>
-                </div>
-                <div className="transition-all duration-200 hover:text-green-500 p-2">
-                  <span>
-                    <BiRepost className="w-5 h-5 inline" />
-                  </span>
-                  <span className="ml-2">1.3k</span>
-                </div>
-                <div className="transition-all duration-200 hover:text-red-500 p-2">
-                  <span>
-                    <IoHeartOutline className="w-5 h-5 inline" />
-                  </span>
-                  <span className="ml-2">1.3k</span>
-                </div>
-                <div className="transition-all duration-200 hover:text-blue-500 p-2">
-                  <span>
-                    <ImParagraphRight className="w-5 h-5 inline rotate-90" />
-                  </span>
-                  <span className="ml-2">1.3k</span>
-                </div>
-                <div className="flex-none w-24">
-                  <button
-                    className="btn btn-ghost btn-circle hover:text-blue-500"
-                    type="button"
-                  >
-                    <CiBookmark className="w-5 h-5 inline" />
-                  </button>
-                  <button
-                    className="btn btn-ghost btn-circle hover:text-blue-500"
-                    type="button"
-                  >
-                    <FiShare className="w-5 h-5 inline" />
-                  </button>
-                </div>
-              </div>
+              <ActionButtons
+                comment={post.comment}
+                repost={post.repost}
+                like={post.like}
+                view={post.view}
+              />
             </div>
           </div>
         </div>
