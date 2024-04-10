@@ -32,7 +32,7 @@ export default function PostForm() {
   };
 
   return (
-    <div className="flex flex-row gap-1 p-2 items-start border-b-[1px] border-b-gray-200">
+    <div className="flex flex-row gap-1 p-2 items-start">
       <figure className="flex-none w-16 ">
         <Image src={me.image} alt="avatar" width={64} height={64} />
       </figure>

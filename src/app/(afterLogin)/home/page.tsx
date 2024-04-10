@@ -8,7 +8,9 @@ export default function Home() {
     <main className="flex min-h-screen flex-col relative border-x-[1px] border-r-gray-200">
       <TabProvider>
         <Tab />
-        <PostForm />
+        <div className="border-b-[1px] border-b-gray-200">
+          <PostForm />
+        </div>
         <Post />
         <Post />
         <Post />

@@ -1,5 +1,11 @@
-export default function Home() {
+import Home from '@/app/(afterLogin)/home/page';
+import ComposeTweet from '@/app/(afterLogin)/@modal/(.)compose/tweet/page';
+
+export default function ComposeTweetPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+    <>
+      <Home />
+      <ComposeTweet />
+    </>
   );
 }

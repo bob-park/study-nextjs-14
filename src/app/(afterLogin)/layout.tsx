@@ -14,8 +14,10 @@ import FollowRecommand from './_component/FollowRecommand';
 
 export default function AfterLoginLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <div className="flex justify-center size-full relative">
@@ -76,6 +78,7 @@ export default function AfterLoginLayout({
           </section>
         </div>
       </div>
+      {modal}
     </div>
   );
 }

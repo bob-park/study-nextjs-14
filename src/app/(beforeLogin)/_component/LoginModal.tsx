@@ -44,8 +44,14 @@ export default function LoginModal() {
     e.preventDefault();
   };
 
+  const handleKeyboardDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.key === 'Escape') {
+      handleBackdrop();
+    }
+  };
+
   return (
-    <dialog id={id} className="modal ">
+    <dialog id={id} className="modal" onKeyDownCapture={handleKeyboardDown}>
       <div className="modal-box relative">
         <div className="">
           <button
