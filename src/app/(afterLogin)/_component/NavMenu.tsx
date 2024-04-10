@@ -2,7 +2,7 @@
 
 // nextjs
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { Link } from 'react-daisyui';
+import Link from 'next/link';
 
 import {
   IoHome,
@@ -24,7 +24,7 @@ export default function NavMenu() {
   return (
     <ul className="flex-1">
       <li className="">
-        <Link className="" href="/home" style={{ textDecoration: 'none' }}>
+        <Link className="" href="/home">
           <div className="flex w-full h-[50px p-3 items-center hover:bg-gray-300 rounded-full">
             {segment === 'home' ? (
               <IoHome className="w-6 h-6" />

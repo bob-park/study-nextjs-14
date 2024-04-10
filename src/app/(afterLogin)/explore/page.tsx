@@ -1,5 +1,15 @@
+import SearchZone from '../_component/SearchZone';
+import TrandSection from '../_component/TrandSection';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+    <main className="flex flex-col min-h-screen items-center relative">
+      <div className="w-full">
+        <SearchZone />
+      </div>
+      <div className="w-full">
+        <TrandSection />
+      </div>
+    </main>
   );
 }

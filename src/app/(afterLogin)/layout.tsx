@@ -3,15 +3,14 @@ import zlogo from '/public/zlogo.png';
 
 // nextjs
 import Image from 'next/image';
-import Link from 'next/link';
 
 // react icon
 import NavMenu from './_component/NavMenu';
 import LogoutButton from './_component/LogoutButton';
-import TrandSection from './_component/TrandSection';
 import FollowRecommand from './_component/FollowRecommand';
-import SearchZone from './_component/SearchZone';
 import RightSearchSection from './_component/RightSearchSection';
+import RightTrandSection from './_component/RightTrandSection';
+import Link from 'next/link';
 
 export default function AfterLoginLayout({
   children,
@@ -66,7 +65,7 @@ export default function AfterLoginLayout({
           <section className="flex-none w-[350px] pl-4">
             <RightSearchSection />
             <div className="mt-2">
-              <TrandSection />
+              <RightTrandSection />
             </div>
             <div className="mt-4">
               <FollowRecommand />
