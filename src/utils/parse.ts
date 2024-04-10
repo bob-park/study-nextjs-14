@@ -46,6 +46,6 @@ export function parseSimpleCount(count: number) {
   }
 
   return (
-    (count / digits[i].value).toFixed(2).replace(regex, '$1') + digits[i].symbol
+    (count / digits[i].value).toFixed(1).replace(regex, '$1') + digits[i].symbol
   );
 }

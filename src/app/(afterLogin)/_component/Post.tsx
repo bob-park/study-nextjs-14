@@ -17,35 +17,42 @@ import { register } from 'timeago.js';
 import ko from 'timeago.js/lib/lang/ko';
 import ActionButtons from './ActionButtons';
 
+import { faker } from '@faker-js/faker';
+
 register('ko', ko);
 
-const post = {
-  user: {
-    id: 'bob-park',
-    nickname: '봡팤',
-    name: '박현우',
-    image: '/5Udwvqim.jpg',
-  },
-  id: 'dummy-post-id',
-  content: '클론코딩 라이브로 하니 너무 힘들어요 ㅜㅜ',
-  images: ['/yRsRRjGO.jpg'],
-  createdDate: new Date(),
-  comment: {
-    count: 1200,
-  },
-  repost: {
-    count: 1500000,
-  },
-  like: {
-    count: 120000,
-    isLike: true,
-  },
-  view: {
-    count: 12000,
-  },
-};
-
 export default function Post() {
+  const post = {
+    user: {
+      id: 'bob-park',
+      nickname: '봡팤',
+      name: '박현우',
+      image: '/5Udwvqim.jpg',
+    },
+    id: 'dummy-post-id',
+    content: '클론코딩 라이브로 하니 너무 힘들어요 ㅜㅜ',
+    images: [
+      {
+        imageId: 1,
+        link: faker.image.urlLoremFlickr(),
+      },
+    ],
+    createdDate: new Date(),
+    comment: {
+      count: 1,
+    },
+    repost: {
+      count: 1,
+    },
+    like: {
+      count: 0,
+      isLike: true,
+    },
+    view: {
+      count: 1,
+    },
+  };
+
   return (
     <article className="w-full p-4 border-b-[1px] border-b-gray-200">
       <div className="flex gap-2">
@@ -87,13 +94,11 @@ export default function Post() {
             </div>
             {/* contents */}
             {post.images.map((item) => (
-              <div key={`post-${post.id}`} className="flex-1">
-                <Image
+              <div key={`post-${post.id}-${item.imageId}`} className="flex-1">
+                <img
                   className="rounded-xl size-full"
-                  src={item}
+                  src={item.link}
                   alt={`post-${post.id}`}
-                  width={400}
-                  height={300}
                 />
               </div>
             ))}
