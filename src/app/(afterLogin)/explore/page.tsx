@@ -4,7 +4,7 @@ import TrandSection from '../_component/TrandSection';
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center relative px-4">
-      <div className="w-full">
+      <div className="w-full sticky top-0 bg-white">
         <SearchZone />
       </div>
       <div className="w-full">

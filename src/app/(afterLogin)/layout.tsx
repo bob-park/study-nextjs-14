@@ -65,11 +65,13 @@ export default function AfterLoginLayout({
 
           {/* right menu */}
           <section className="flex-none w-[350px] pl-4">
-            <RightSearchSection />
+            <div className="sticky top-0">
+              <RightSearchSection />
+            </div>
             <div className="mt-2">
               <RightTrandSection />
             </div>
-            <div className="mt-4">
+            <div className="mt-4 sticky top-16">
               <FollowRecommand />
             </div>
           </section>

@@ -21,7 +21,7 @@ export default function LogoutButton() {
   const onLogout = () => {};
 
   return (
-    <div className="dropdown dropdown-top">
+    <div className="dropdown dropdown-top w-full">
       <div
         className="flex w-full gap-2 justify-between items-center rounded-full transition-all duration-150 hover:bg-gray-300 px-4 py-2"
         tabIndex={0}

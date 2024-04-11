@@ -41,7 +41,7 @@ export default function NavMenu() {
       </li>
       <li>
         <Link href="/explore" style={{ textDecoration: 'none' }}>
-          <div className="flex w-full h-[50px p-3 items-center hover:bg-gray-400 rounded-full">
+          <div className="flex w-full h-[50px p-3 items-center hover:bg-gray-300 rounded-full">
             {segment === 'explore' ? (
               <IoSearch className="w-6 h-6" />
             ) : (
@@ -57,7 +57,7 @@ export default function NavMenu() {
       </li>
       <li>
         <Link href="/messages" style={{ textDecoration: 'none' }}>
-          <div className="flex w-full h-[50px p-3 items-center hover:bg-gray-400 rounded-full">
+          <div className="flex w-full h-[50px p-3 items-center hover:bg-gray-300 rounded-full">
             {segment === 'messages' ? (
               <BiSolidMessage className="w-6 h-6" />
             ) : (
@@ -76,7 +76,7 @@ export default function NavMenu() {
       {me?.id && (
         <li>
           <Link href={`/${me.id}`} style={{ textDecoration: 'none' }}>
-            <div className="flex w-full h-[50px p-3 items-center hover:bg-gray-400 rounded-full">
+            <div className="flex w-full h-[50px p-3 items-center hover:bg-gray-300 rounded-full">
               {segment === `${me.id}` ? (
                 <RiUser6Fill className="w-6 h-6" />
               ) : (
