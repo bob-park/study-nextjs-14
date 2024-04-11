@@ -14,6 +14,9 @@ import { useState, useEffect, FormEvent } from 'react';
 // nextjs
 import { useRouter } from 'next/navigation';
 
+// server action
+import { onLogin } from '@/app/(beforeLogin)/@modal/(.)i/flow/login/action';
+
 const id = 'login_modal_id';
 
 export default function LoginModal() {
@@ -42,6 +45,8 @@ export default function LoginModal() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    onLogin({ id: username, password });
   };
 
   const handleKeyboardDown = (e: React.KeyboardEvent<HTMLElement>) => {

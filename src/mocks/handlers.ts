@@ -20,7 +20,7 @@ const Posts = [];
 export const handlers = [
   http.post('/api/login', () => {
     console.log('로그인');
-    return HttpResponse.json(User[1], {
+    return HttpResponse.json(User[3], {
       headers: {
         'Set-Cookie': 'connect.sid=msw-cookie;HttpOnly;Path=/',
       },

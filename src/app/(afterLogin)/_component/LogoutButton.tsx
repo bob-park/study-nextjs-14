@@ -4,21 +4,31 @@
 import { useState } from 'react';
 
 // nextjs
-import Image from 'next/image';
+
+// next auth - client
+import { signOut, useSession } from 'next-auth/react';
 
 // react-icons
 import { GoKebabHorizontal } from 'react-icons/go';
+import { useRouter } from 'next/navigation';
 
 export default function LogoutButton() {
-  const me = {
-    id: 'bob-park',
-    nickname: '봡팤',
-    name: '박현우',
-    image: '/5Udwvqim.jpg',
-  };
+  // router
+  const router = useRouter();
+
+  // session
+  const { data: me } = useSession();
 
   // handle
-  const onLogout = () => {};
+  const handleLogout = () => {
+    signOut({ redirect: false }).then(() => {
+      router.replace('/');
+    });
+  };
+
+  if (!me?.user) {
+    return null;
+  }
 
   return (
     <div className="dropdown dropdown-top w-full">
@@ -29,14 +39,18 @@ export default function LogoutButton() {
         <div className="">
           <div className="flex justify-start items-center gap-2">
             <figure className="flex-none">
-              <Image src={me.image} alt="user image" width={52} height={52} />
+              <img
+                className="w-16 h-16 rounded-full"
+                src={me.user.image!}
+                alt="user image"
+              />
             </figure>
             <div className="flex flex-col gap-1">
               <p className="text-lg font-bold">
-                <span>{me.name}</span> (<span>{me.name}</span>)
+                <span>{me.user.name}</span> (<span>{me.user.name}</span>)
               </p>
               <p className="text-gray-500">
-                @<span>{me.id}</span>
+                @<span>{me.user.email}</span>
               </p>
             </div>
           </div>
@@ -54,8 +68,11 @@ export default function LogoutButton() {
             <div className="hover:bg-gray-300 px-4 py-2 rounded-full">
               <p className="text-lg font-bold">Add an existing account</p>
             </div>
-            <div className="hover:bg-gray-300 px-4 py-2 rounded-full">
-              <p className="text-lg font-bold">Log out @{me.id}</p>
+            <div
+              className="hover:bg-gray-300 px-4 py-2 rounded-full"
+              onClick={handleLogout}
+            >
+              <p className="text-lg font-bold">Log out @{me.user.email}</p>
             </div>
           </div>
         </div>
