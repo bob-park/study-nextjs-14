@@ -10,9 +10,7 @@ import Link from 'next/link';
 import { GoKebabHorizontal } from 'react-icons/go';
 import { BsDot } from 'react-icons/bs';
 
-import ActionButtons, {
-  type ActionButtonsProps,
-} from '../../_component/ActionButtons';
+import ActionButtons from '../../_component/ActionButtons';
 import PostImages from '../../_component/PostImages';
 
 // timeago

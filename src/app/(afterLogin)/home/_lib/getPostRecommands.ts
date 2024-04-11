@@ -5,7 +5,7 @@ export async function getPostRecommands() {
       tags: ['posts', 'recommends'], // update 해줄때 key
     },
     // cache 안할때
-    // cache: 'no-store'
+    cache: 'no-store',
   });
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
