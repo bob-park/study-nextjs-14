@@ -1,6 +1,6 @@
 'use client';
 
-import PostForm from '@/app/(afterLogin)/_component/PostForm';
+import PostForm from '@/app/(afterLogin)/home/_component/PostForm';
 // react
 import { useState, useEffect, FormEvent } from 'react';
 

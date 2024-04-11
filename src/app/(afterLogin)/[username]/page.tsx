@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import Post from '../_component/Post';
+import Post from '../home/_component/PostArticle';
 import BackdropButton from '../_component/BackdropButton';
 
 const me = {

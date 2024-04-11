@@ -1,10 +1,5 @@
 'use client';
 
-export type PostImage = {
-  imageId: number;
-  link: string;
-};
-
 type PostImagesProps = {
   images: PostImage[];
 };

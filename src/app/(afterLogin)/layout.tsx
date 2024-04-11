@@ -11,6 +11,7 @@ import FollowRecommand from './_component/FollowRecommand';
 import RightSearchSection from './_component/RightSearchSection';
 import RightTrandSection from './_component/RightTrandSection';
 import Link from 'next/link';
+import RQProvider from './_component/RQProvider';
 
 export default function AfterLoginLayout({
   children,
@@ -55,29 +56,31 @@ export default function AfterLoginLayout({
         </section>
       </header>
 
-      {/* right contents */}
-      <div className="h-full">
-        <div className="flex flex-row h-full">
-          {/* contents */}
-          <div className="flex-none w-[600px] border-x-[1px] border-x-gray-200">
-            {children}
-          </div>
+      <RQProvider>
+        {/* right contents */}
+        <div className="h-full">
+          <div className="flex flex-row h-full">
+            {/* contents */}
+            <div className="flex-none w-[600px] border-x-[1px] border-x-gray-200">
+              {children}
+            </div>
 
-          {/* right menu */}
-          <section className="flex-none w-[350px] pl-4">
-            <div className="sticky top-0">
-              <RightSearchSection />
-            </div>
-            <div className="mt-2">
-              <RightTrandSection />
-            </div>
-            <div className="mt-4 sticky top-16">
-              <FollowRecommand />
-            </div>
-          </section>
+            {/* right menu */}
+            <section className="flex-none w-[350px] pl-4">
+              <div className="sticky top-0">
+                <RightSearchSection />
+              </div>
+              <div className="mt-2">
+                <RightTrandSection />
+              </div>
+              <div className="mt-4 sticky top-16">
+                <FollowRecommand />
+              </div>
+            </section>
+          </div>
         </div>
-      </div>
-      {modal}
+        {modal}
+      </RQProvider>
     </div>
   );
 }

@@ -1,69 +1,41 @@
-import Post from '../_component/Post';
-import PostForm from '../_component/PostForm';
-import Tab from '../_component/Tab';
-import TabProvider from '../_component/TabProvider';
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from '@tanstack/react-query';
+import Post from './_component/PostArticle';
+import PostForm from './_component/PostForm';
+import Tab from './_component/Tab';
+import TabProvider from './_component/TabProvider';
+import PostRecommands from './_component/PostRecommands';
 
-const imgArr = [
-  'https://loremflickr.com/640/480?lock=5636801104445440',
-  'https://loremflickr.com/640/480?lock=3920910637596672',
-  'https://loremflickr.com/640/480?lock=3371568644227074',
-  'https://loremflickr.com/640/480?lock=3371568644227073',
-];
+import { getPostRecommands } from '@/app/(afterLogin)/home/_lib/getPostRecommands';
 
-const prePost = {
-  user: {
-    id: 'bob-park',
-    nickname: '봡팤',
-    name: '박현우',
-    avatar: '/5Udwvqim.jpg',
-  },
-  content: '클론코딩 라이브로 하니 너무 힘들어요 ㅜㅜ',
-  createdDate: new Date(),
-  comment: {
-    count: 1,
-  },
-  repost: {
-    count: 1,
-  },
-  like: {
-    count: 0,
-    isLike: true,
-  },
-  view: {
-    count: 1,
-  },
-};
+export default async function Home() {
+  const queryClient = new QueryClient();
 
-const posts = new Array(10).fill(prePost).map((item, index) => {
-  const imgLenth = Math.floor(Math.random() * 4);
-
-  const images = new Array(imgLenth + 1).fill('*').map((img, index) => {
-    return { imageId: index, link: imgArr[index] };
+  await queryClient.prefetchQuery({
+    queryKey: ['posts', 'recommands'], // 이런 key 를 가지고 있으면
+    queryFn: getPostRecommands, // 이 function 실행
   });
 
-  return { ...item, id: `dummy-post-id-${index}`, images };
-});
+  const dehydratedState = dehydrate(queryClient);
 
-export default function Home() {
   return (
     <main className="flex min-h-screen flex-col relative">
-      <TabProvider>
-        <Tab />
-        <div className="border-b-[1px] border-b-gray-200">
-          <PostForm />
-        </div>
+      <HydrationBoundary state={dehydratedState}>
+        <TabProvider>
+          <Tab />
+          <div className="border-b-[1px] border-b-gray-200">
+            <PostForm />
+          </div>
 
-        {/* contents */}
-        <div className="">
-          {posts.map((post) => (
-            <Post
-              key={`post-key-${post.id}`}
-              {...post}
-              date={post.createdDate}
-            />
-          ))}
-        </div>
-      </TabProvider>
+          {/* contents */}
+          <div className="">
+            <PostRecommands />
+          </div>
+        </TabProvider>
+      </HydrationBoundary>
     </main>
   );
 }
