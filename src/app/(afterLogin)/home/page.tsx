@@ -14,9 +14,16 @@ import { getPostRecommands } from '@/app/(afterLogin)/home/_lib/getPostRecommand
 export default async function Home() {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery({
-    queryKey: ['posts', 'recommands'], // 이런 key 를 가지고 있으면
-    queryFn: getPostRecommands, // 이 function 실행
+  // await queryClient.prefetchQuery({
+  //   queryKey: ['posts', 'recommands'], // 이런 key 를 가지고 있으면
+  //   queryFn: getPostRecommands, // 이 function 실행
+  // });
+
+  // infinity scrolling
+  await queryClient.prefetchInfiniteQuery({
+    queryKey: ['posts', 'recommands'],
+    queryFn: getPostRecommands,
+    initialPageParam: 0, // 초기 page param
   });
 
   const dehydratedState = dehydrate(queryClient);
