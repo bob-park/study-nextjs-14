@@ -56,6 +56,26 @@ const dummy = {
       content: '안녕하세요',
       createdDate: new Date(),
     },
+    {
+      id: 'message-id3',
+      user: {
+        id: 'hero',
+        nickname: '영웅',
+        avatar: 'https://avatars.githubusercontent.com/u/74192780',
+      },
+      content: '꺼졍',
+      createdDate: new Date(),
+    },
+    {
+      id: 'message-id3',
+      user: {
+        id: 'hero',
+        nickname: '영웅',
+        avatar: 'https://avatars.githubusercontent.com/u/74192780',
+      },
+      content: '개눔아',
+      createdDate: new Date(),
+    },
   ],
 };
 

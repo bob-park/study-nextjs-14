@@ -11,7 +11,7 @@ import { FiShare } from 'react-icons/fi';
 // utils
 import { parseSimpleCount } from '@/utils/parse';
 
-type ActionButtonsProps = {
+export type ActionButtonsProps = {
   comment: {
     count: number;
   };

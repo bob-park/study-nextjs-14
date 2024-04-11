@@ -50,7 +50,7 @@ const dummyData = [
 export default function MessagePage() {
   return (
     <main className="flex flex-col min-h-screen p-3">
-      <div className="flex-none h-12">
+      <div className="flex-none h-12 sticky top-0 bg-white z-10">
         <div className="flex flex-row gap-2 justify-between items-center">
           <p className="text-2xl font-bold">
             <span>쪽지</span>
@@ -68,7 +68,7 @@ export default function MessagePage() {
 
       {/* search */}
       <div className="flex-none h-14">
-        <form className="sticky top-0 mb-6 w-full">
+        <form className="mb-6 w-full">
           <label className="input input-bordered flex items-center gap-2 m-1 mt-2 rounded-full">
             <IoSearchSharp className="w-6 h-6" />
             <input type="text" className="grow" placeholder="쪽지 검색하기" />
