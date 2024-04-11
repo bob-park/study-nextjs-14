@@ -1,20 +1,25 @@
 'use client';
 
+// nextjs
+import { useRouter } from 'next/navigation';
+
+// react icons
 import { GoKebabHorizontal } from 'react-icons/go';
 import { BsDot } from 'react-icons/bs';
+
+// faker
+import { faker } from '@faker-js/faker';
 
 // timeago
 import TimeAgo from 'timeago-react';
 import { register } from 'timeago.js';
 import ko from 'timeago.js/lib/lang/ko';
 
-import { useRouter } from 'next/navigation';
-
 register('ko', ko);
 
 type RoomProps = {
   id: string;
-  user: { id: string; nickname: string };
+  user: { id: string; nickname: string; avatar: string };
   contents: { id: string; content: string; createdDate: Date };
 };
 
@@ -35,9 +40,9 @@ export default function Room({ id, user, contents }: RoomProps) {
       <div className="flex gap-2 justify-between items-center">
         {/* avatar */}
         <div className="flex-none w-20">
-          <div className="avatar avatar-">
+          <div className="avatar">
             <div className="w-16 rounded-full">
-              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src={faker.image.avatar()} />
             </div>
           </div>
         </div>

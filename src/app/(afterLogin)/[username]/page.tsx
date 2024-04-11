@@ -1,10 +1,7 @@
-'use client';
-
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-// react icons
-import { IoArrowBack } from 'react-icons/io5';
+
 import Post from '../_component/Post';
+import BackdropButton from '../_component/BackdropButton';
 
 const me = {
   id: 'bob-park',
@@ -14,22 +11,12 @@ const me = {
 };
 
 export default function Profile() {
-  // router
-  const router = useRouter();
-
-  // handle
-  const handleBack = () => {
-    router.back();
-  };
-
   return (
     <main className="flex flex-col min-h-screen">
       <div className="border-b-[1px] border-b-gray-200">
         <div className="flex items-center h-20 px-4">
           <div className="flex-none w-20">
-            <button className="btn btn-ghost btn-circle" onClick={handleBack}>
-              <IoArrowBack className="w-6 h-6" />
-            </button>
+            <BackdropButton />
           </div>
           <div className="flex-1">
             <p className="text-xl font-bold">

@@ -7,23 +7,43 @@ import Room from '../_component/Room';
 
 const dummyData = [
   {
-    id: 'room-id',
+    id: 'room-id1',
     user: {
       id: 'hero',
       nickname: '영웅',
+      avatar: '',
     },
-    contents: [
-      {
-        id: 'new-1',
-        content: '안녕하세요',
-        createdDate: new Date(),
-      },
-      {
-        id: 'new-2',
-        content: '안녕히 가세요',
-        createdDate: new Date(),
-      },
-    ],
+    lastMessage: {
+      id: 'new-1',
+      content: '안녕하세요',
+      createdDate: new Date(),
+    },
+  },
+  {
+    id: 'room-id2',
+    user: {
+      id: 'hero',
+      nickname: '영웅',
+      avatar: '',
+    },
+    lastMessage: {
+      id: 'new-1',
+      content: '안녕하세요',
+      createdDate: new Date(),
+    },
+  },
+  {
+    id: 'room-id3',
+    user: {
+      id: 'hero',
+      nickname: '영웅',
+      avatar: '',
+    },
+    lastMessage: {
+      id: 'new-1',
+      content: '안녕하세요',
+      createdDate: new Date(),
+    },
   },
 ];
 
@@ -60,7 +80,7 @@ export default function MessagePage() {
       <div className="flex-1 mt-2 w-full min-h-screen">
         {dummyData.map((item) => (
           <div key={`message-key-${item.user.id}`} className="">
-            <Room id={item.id} user={item.user} contents={item.contents[0]} />
+            <Room id={item.id} user={item.user} contents={item.lastMessage} />
           </div>
         ))}
       </div>
