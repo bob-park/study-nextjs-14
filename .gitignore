@@ -37,3 +37,14 @@ next-env.d.ts
 
 ## project
 .idea/
+
+.yarnrc.yml
+
+.pnp.*
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
